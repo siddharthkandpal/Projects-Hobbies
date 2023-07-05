@@ -1,0 +1,6 @@
+aes.c:60:23:mul2	2
+aes.c:72:13:shift_rows	1
+aes.c:103:13:inv_shift_rows	1
+aes.c:126:6:aes_key_schedule_128	3
+aes.c:168:6:aes_encrypt_128	8
+aes.c:219:6:aes_decrypt_128	8

@@ -1,0 +1,6 @@
+../Core/Src/aes.c:60:23:mul2	16	static
+../Core/Src/aes.c:72:13:shift_rows	24	static
+../Core/Src/aes.c:103:13:inv_shift_rows	24	static
+../Core/Src/aes.c:126:6:aes_key_schedule_128	40	static
+../Core/Src/aes.c:168:6:aes_encrypt_128	64	static
+../Core/Src/aes.c:219:6:aes_decrypt_128	64	static
