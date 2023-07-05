@@ -1,0 +1,9 @@
+
+------------------ Single Stage Core -----------------------
+Total Cycles Taken SS = 	28
+Cycles Per Instruction SS = 	1.07692
+Instructions Per Cycle SS = 	0.928571
+------------------ 5 Stage Stage Core -----------------------
+Total Cycles Taken FS = 	31
+Cycles Per Instruction FS = 	1.10714
+Instructions Per Cycle FS = 	0.903226
