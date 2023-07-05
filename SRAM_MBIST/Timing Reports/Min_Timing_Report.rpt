@@ -1,0 +1,65 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : BIST
+Version: R-2020.09-SP5
+Date   : Fri May 13 00:43:36 2022
+****************************************
+
+Operating Conditions: ff1p16v125c   Library: saed32rvt_ff1p16v125c
+Wire Load Model Mode: enclosed
+
+  Startpoint: MEM/addr_reg_reg[4]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: fail_reg (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  BIST               8000                  saed32rvt_ff1p16v125c
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.01       0.01
+  MEM/addr_reg_reg[4]/CLK (DFFX1_RVT)      0.00       0.01 r
+  MEM/addr_reg_reg[4]/Q (DFFX1_RVT)        0.05       0.06 r
+  U7827/Y (OR2X1_RVT)                      0.02       0.09 r
+  U7681/Y (OR2X2_RVT)                      0.02       0.11 r
+  U7684/Y (NOR2X0_RVT)                     0.06       0.17 f
+  U7929/Y (AOI22X1_RVT)                    0.03       0.20 r
+  U7931/Y (AND4X1_RVT)                     0.03       0.23 r
+  U7932/Y (AND3X1_RVT)                     0.02       0.25 r
+  U7938/Y (NAND4X0_RVT)                    0.02       0.27 f
+  U7963/Y (OA22X1_RVT)                     0.03       0.30 f
+  U8247/Y (INVX1_RVT)                      0.01       0.31 r
+  U8249/Y (AO22X1_RVT)                     0.03       0.34 r
+  U8251/Y (AOI22X1_RVT)                    0.03       0.37 f
+  U8252/Y (OA22X1_RVT)                     0.02       0.39 f
+  U8253/Y (AO21X1_RVT)                     0.02       0.41 f
+  U8254/Y (AO22X1_RVT)                     0.02       0.43 f
+  U8255/Y (AO22X1_RVT)                     0.02       0.45 f
+  U8257/Y (AOI22X1_RVT)                    0.03       0.47 r
+  U8258/CO (FADDX1_RVT)                    0.03       0.50 r
+  U8260/Y (AO21X1_RVT)                     0.03       0.53 r
+  fail_reg/D (DFFX1_RVT)                   0.00       0.53 r
+  data arrival time                                   0.53
+
+  clock clk (rise edge)                    0.55       0.55
+  clock network delay (ideal)              0.01       0.56
+  clock uncertainty                       -0.01       0.55
+  fail_reg/CLK (DFFX1_RVT)                 0.00       0.55 r
+  library setup time                      -0.02       0.53
+  data required time                                  0.53
+  -----------------------------------------------------------
+  data required time                                  0.53
+  data arrival time                                  -0.53
+  -----------------------------------------------------------
+  slack (MET)                                         0.00
+
+
+1

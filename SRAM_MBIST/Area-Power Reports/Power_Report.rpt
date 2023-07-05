@@ -1,0 +1,53 @@
+ 
+****************************************
+Report : power
+        -analysis_effort low
+Design : BIST
+Version: R-2020.09-SP5
+Date   : Fri May 13 00:52:29 2022
+****************************************
+
+
+Library(s) Used:
+
+    saed32rvt_ff1p16v125c (File: /usr/local/SAED32_EDK/lib/stdcell_rvt/db_ccs/saed32rvt_ff1p16v125c.db)
+
+
+Operating Conditions: ff1p16v125c   Library: saed32rvt_ff1p16v125c
+Wire Load Model Mode: enclosed
+
+Design        Wire Load Model            Library
+------------------------------------------------
+BIST                   8000              saed32rvt_ff1p16v125c
+
+
+Global Operating Voltage = 1.16 
+Power-specific unit information :
+    Voltage Units = 1V
+    Capacitance Units = 1.000000ff
+    Time Units = 1ns
+    Dynamic Power Units = 1uW    (derived from V,C,T units)
+    Leakage Power Units = 1pW
+
+
+  Cell Internal Power  =   6.6331 mW   (98%)
+  Net Switching Power  = 108.0940 uW    (2%)
+                         ---------
+Total Dynamic Power    =   6.7412 mW  (100%)
+
+Cell Leakage Power     = 167.7922 uW
+
+
+                 Internal         Switching           Leakage            Total
+Power Group      Power            Power               Power              Power   (   %    )  Attrs
+--------------------------------------------------------------------------------------------------
+io_pad             0.0000            0.0000            0.0000            0.0000  (   0.00%)
+memory             0.0000            0.0000            0.0000            0.0000  (   0.00%)
+black_box          0.0000            0.0000            0.0000            0.0000  (   0.00%)
+clock_network      0.0000            0.0000            0.0000            0.0000  (   0.00%)
+register       6.4947e+03           10.3348        7.4777e+07        6.5799e+03  (  95.24%)
+sequential         0.0000            0.0000            0.0000            0.0000  (   0.00%)
+combinational    138.3725           97.7593        9.3015e+07          329.1467  (   4.76%)
+--------------------------------------------------------------------------------------------------
+Total          6.6331e+03 uW       108.0941 uW     1.6779e+08 pW     6.9090e+03 uW
+1

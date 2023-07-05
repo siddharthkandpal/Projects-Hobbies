@@ -1,0 +1,30 @@
+ 
+****************************************
+Report : area
+Design : BIST
+Version: R-2020.09-SP5
+Date   : Fri May 13 00:52:36 2022
+****************************************
+
+Library(s) Used:
+
+    saed32rvt_ff1p16v125c (File: /usr/local/SAED32_EDK/lib/stdcell_rvt/db_ccs/saed32rvt_ff1p16v125c.db)
+
+Number of ports:                           28
+Number of nets:                          2050
+Number of cells:                         1868
+Number of combinational cells:           1337
+Number of sequential cells:               531
+Number of macros/black boxes:               0
+Number of buf/inv:                        101
+Number of references:                      28
+
+Combinational area:               3275.153751
+Buf/Inv area:                      128.596864
+Noncombinational area:            3508.712179
+Macro/Black Box area:                0.000000
+Net Interconnect area:            1696.812477
+
+Total cell area:                  6783.865930
+Total area:                       8480.678407
+1
