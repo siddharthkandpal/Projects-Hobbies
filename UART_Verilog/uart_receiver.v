@@ -70,6 +70,20 @@ module uart_reciever#(
             state <= DATA;
           end
           DATA: begin
+            shift_register <= {rx_in, shift_register[WORD_LENGTH - 1:0]}; // remove the start and stop bits from the incoming data 
+            rx_bit_cnt <= rx_bit_cnt + 1;
+            if (rx_bit_cnt == WORD_LENGTH - 1) begin
+              if (PARITY == "none")
+                state <= STOP;
+              else
+                state <= PARITY;
+            end
+          end
+          PARITY: begin
+            parity_bit <= ^shift_register[WORD_LENGTH-1:0]; // excluding the parity bit
+            
+          
+        
             
             
               
