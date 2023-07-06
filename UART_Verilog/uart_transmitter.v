@@ -1,5 +1,5 @@
 //UART Transmitter: Verilog, A simple 8 bit UART transmitter for transmitting parallel -> serial over a data line
-//the machine has 4 states IDLE, START, DATA, STOP
+//the machine has 5 states IDLE, START, DATA, PARITY, STOP
 `timescale 1ns / 1ps
 
 module uart_tx #(
