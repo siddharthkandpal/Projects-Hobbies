@@ -32,6 +32,7 @@ module uart_tx #(
   reg [WORD_LENGTH + 1:0] shift_register;
   reg [3:0] count_bits; // 3 bits for 3 states
   reg [3:0] stop_bit_cnt; // stop 
+  reg parity_bit;
 
   //Baud generation, i.e Creating our own clock by the formula: CLKFREQ/BAUDRATE - 1 
 
@@ -62,6 +63,7 @@ module uart_tx #(
       shift_register <= 0;
       tx_ready <= 1'b1;
       stop_bit_cnt <= 0;
+      parity_bit <= 0;
 
     end
     else if (baud_tick) begin
@@ -69,7 +71,7 @@ module uart_tx #(
         IDLE: begin
           if (tx_start) begin
             state <= SEND;
-            shift_register <= {1'b1, tx_data, 1'b0}; // stop bit(1), data, start bit(0)
+            shift_register <= {1'b1, parity_bit, tx_data, 1'b0}; // stop bit(1), data, start bit(0)
             count_bits <= 0; //counter for  nmber of bits
             tx_out <= 0; // start bit, indicating the line is low for the transmission
             tx_ready <= 0; // already busy in the transmission since it has started
@@ -90,14 +92,14 @@ module uart_tx #(
           end
         end
         PARITY: begin
-          tx_out <= ^tx_data; // xor all the input bits
+          parity_bit <= ^tx_data; // xor all the input bits, for parity checking.
           state <= STOP
         end
         STOP: begin
           tx_out <= 1'b1; // stop on high
           stop_bit_cnt <= stop_bit_cnt + 1;
           if (stop_bit_cnt == STOP_BITS - 1) begin
-            tx_state <= TX_IDLE;
+            state <= IDLE;
             tx_ready <= 1'b1;
           end
         end
