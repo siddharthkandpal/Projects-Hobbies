@@ -10,8 +10,8 @@ module uart_tx #(
   parameter CLK_FREQ = 50_000_000  // Clock frequency in Hz, taking 50MHz for our example
 )
 (
-  input clk_glb,  //clock signal
-  input rst_n,    // negative edge reset
+  input clk,  //clock signal
+  input rst,    // negative edge reset
   input tx_start, // transmission start
   input wire [WORD_LENGTH-1:0] tx_data, //input data
   output reg tx_out, //output 
@@ -29,7 +29,7 @@ module uart_tx #(
 
   //Parameters for shift register
 
-  reg [WORD_LENGTH + 1:0] shift_register;
+  reg [WORD_LENGTH + 2:0] shift_register;
   reg [3:0] count_bits; // 3 bits for 3 states
   reg [3:0] stop_bit_cnt; // stop 
   reg parity_bit;
