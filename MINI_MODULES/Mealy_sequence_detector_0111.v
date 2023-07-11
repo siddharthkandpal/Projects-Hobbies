@@ -1,6 +1,6 @@
 //Mealey sequence detector with overlap, sequence is 0111
 
-module mealey_fsm (
+module mealy_fsm (
   input in,
   input clk,
   input rst,
