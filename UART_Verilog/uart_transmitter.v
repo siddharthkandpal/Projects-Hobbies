@@ -66,7 +66,7 @@ module uart_tx #(
       parity_bit <= 0;
 
     end
-    else if (baud_tick) begin
+    else if (new_baud) begin
       case(state)
         IDLE: begin
           if (tx_start) begin
